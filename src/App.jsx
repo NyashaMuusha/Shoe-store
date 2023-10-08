@@ -40,11 +40,11 @@ export default function App() {
 
   const updateQuantity = (sku, quantity) => {
     setCart((items) => {
-      quantity === 0
+      return quantity === 0
         ? items.filter((i) => i.sku !== sku)
         : items.map((i) => (i.sku === sku ? { ...i, quantity } : i));
     });
-  };
+  }
 
   return (
     <>

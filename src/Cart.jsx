@@ -9,7 +9,7 @@ export default function Cart({ cart, updateQuantity }) {
   function renderItem(itemInCart) {
     const { id, sku, quantity } = itemInCart;
     const { price, name, image, skus } = products.find(
-      (p) => p.id === parseInt(id),
+      (p) => p.id === parseInt(id)
     );
     const { size } = skus.find((s) => s.sku === sku);
 
@@ -42,14 +42,14 @@ export default function Cart({ cart, updateQuantity }) {
   if (loading) return <Spinner />;
   if (error) throw error;
 
-  const numItemsCart = cart.reduce((total, item) => total + item.quantity, 0);
+  const numItemsInCart = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <section id="cart">
       <h1>
-        {numItemsCart === 0
+        {numItemsInCart === 0
           ? "Your cart is empty"
-          : `${numItemsCart} Item${numItemsCart > 1 ? "s" : ""} in My Cart`}
+          : `${numItemsInCart} Item${numItemsInCart > 1 ? "s" : ""} in My Cart`}
       </h1>
       <ul>{cart.map(renderItem)}</ul>
     </section>
