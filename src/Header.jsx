@@ -1,9 +1,9 @@
 import React from "react";
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
 
 const activeStyle = {
-  color: 'purple',
-}
+  color: "purple",
+};
 
 function Header() {
   const location = useLocation();
@@ -13,17 +13,23 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <Link to='/'>
+            <Link to="/">
               <img alt="Carved Rock Fitness" src="/images/logo.png" />
             </Link>
           </li>
           <li>
-            <Link style={location.pathname === '/shoes' ? activeStyle : {}} to='/shoes'>
+            <Link
+              style={location.pathname === "/shoes" ? activeStyle : {}}
+              to="/shoes"
+            >
               Shoes
             </Link>
           </li>
           <li>
-            <Link style={location.pathname === '/cart' ? activeStyle : {}} to='/cart'>
+            <Link
+              style={location.pathname === "/cart" ? activeStyle : {}}
+              to="/cart"
+            >
               Cart
             </Link>
           </li>
