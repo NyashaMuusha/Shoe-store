@@ -1,4 +1,4 @@
-export const cartReducer = (cart, action) => {
+const cartReducer = (cart, action) => {
   switch (action.type) {
     case "empty":
       return [];
@@ -27,3 +27,4 @@ export const cartReducer = (cart, action) => {
       throw new Error("Unhandled action" + action.type);
   }
 };
+export default cartReducer;

@@ -79,6 +79,11 @@
       "city": "harare",
       "country": "India",
       "id": 4
+    },
+    {
+      "city": "bulawayo",
+      "country": "China",
+      "id": 5
     }
   ]
 }
