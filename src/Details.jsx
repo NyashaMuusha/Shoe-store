@@ -4,7 +4,7 @@ import useFetch from "./services/useFetch";
 import Spinner from "./Spinner";
 import PageNotFound from "./PageNotFound";
 
-export default function Detail({ addToCart }) {
+export default function Detail({ dispatch }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [sku, setSku] = useState("");
@@ -34,7 +34,7 @@ export default function Detail({ addToCart }) {
           disabled={!sku}
           onClick={() => {
             navigate("/cart");
-            addToCart(id, sku);
+            dispatch({ type: "add", id: id, sku: sku });
           }}
         >
           Add to cart
