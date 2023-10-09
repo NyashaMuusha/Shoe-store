@@ -11,9 +11,9 @@ export default function useFetchAll(urls) {
     //Only run is the array of urls passed in changes
     if (areEqual(prevUrls.current, urls)) {
       setLoading(false);
-      return
-    };
-    
+      return;
+    }
+
     prevUrls.current = urls;
     const promises = urls.map((url) =>
       fetch(baseUrl + url).then((response) => {
@@ -37,6 +37,7 @@ export default function useFetchAll(urls) {
 
 const areEqual = (array1, array2) => {
   return (
-    array1.length === array2.length && array1.every((value, index) => value === array2(index))
-  )
-}
+    array1.length === array2.length &&
+    array1.every((value, index) => value === array2(index))
+  );
+};

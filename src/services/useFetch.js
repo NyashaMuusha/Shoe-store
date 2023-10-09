@@ -27,7 +27,7 @@ export default function useFetch(url) {
     }
     init();
 
-    return () => isMounted.current = false;
+    return () => (isMounted.current = false);
   }, [url]);
 
   return { data, error, loading };
